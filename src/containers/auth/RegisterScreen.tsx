@@ -9,7 +9,7 @@ import {
 import {IconButton} from 'react-native-paper'
 import colors from 'res/colors'
 
-const RegisterScreen: React.FC = ({navigation}: any) => {
+const RegisterScreen: React.FC = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [password, setPassword] = useState('')
 

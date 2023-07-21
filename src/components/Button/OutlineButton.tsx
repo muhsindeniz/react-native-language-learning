@@ -4,18 +4,33 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  View,
 } from 'react-native'
 import colors from 'res/colors'
 
 interface OutlineButtonPropsType {
   children: React.ReactNode
   onPress?: ((event: GestureResponderEvent) => void) | undefined
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
 }
 
-const PrimaryButton = ({children, onPress}: OutlineButtonPropsType) => {
+const OutlineButton = ({
+  children,
+  onPress,
+  leftIcon,
+  rightIcon,
+}: OutlineButtonPropsType) => {
   return (
-    <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
+    <TouchableOpacity
+      style={[
+        styles.buttonContainer,
+        leftIcon || rightIcon ? styles.activeIcon : styles.passiveIcon,
+      ]}
+      onPress={onPress}>
+      <View>{leftIcon}</View>
       <Text style={styles.content}>{children}</Text>
+      <View>{rightIcon}</View>
     </TouchableOpacity>
   )
 }
@@ -26,10 +41,19 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: '#6a4ae3',
     borderRadius: 16,
-    paddingVertical: 20,
     marginVertical: 10,
     width: '100%',
-    paddingHorizontal: 20,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  activeIcon: {
+   padding: 10,
+   height: 46
+  },
+  passiveIcon: {
+    padding: 20
   },
   content: {
     textAlign: 'center',
@@ -37,7 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: colors.textPrimary,
-  }
+  },
 })
 
-export default PrimaryButton
+export default OutlineButton

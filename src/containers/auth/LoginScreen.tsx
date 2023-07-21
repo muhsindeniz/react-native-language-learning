@@ -1,13 +1,11 @@
-import {PrimaryButton} from '../../components/Button'
+import {OutlineButton, PrimaryButton} from '../../components/Button'
 import React, {useState} from 'react'
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-} from 'react-native'
+import {StyleSheet, Text, View, TextInput, Image} from 'react-native'
 import {IconButton} from 'react-native-paper'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import colors from 'res/colors'
+import images from 'res/images'
+import FastAuth from './components/FastAuth/FastAuth'
 
 const LoginScreen: React.FC = ({navigation}: any) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -26,7 +24,7 @@ const LoginScreen: React.FC = ({navigation}: any) => {
           style={styles.emailInput}
           autoCapitalize="none"
           keyboardType="email-address"
-          placeholder='E-mail address'
+          placeholder="E-mail address"
         />
 
         <View style={styles.passwordInputContainer}>
@@ -46,7 +44,7 @@ const LoginScreen: React.FC = ({navigation}: any) => {
           />
         </View>
 
-        <PrimaryButton>Login</PrimaryButton>
+        <PrimaryButton>Log In</PrimaryButton>
       </View>
 
       <Text
@@ -54,6 +52,14 @@ const LoginScreen: React.FC = ({navigation}: any) => {
         style={styles.forgotPassword}>
         Forgot Password
       </Text>
+
+      <View style={styles.fastLoginLine}>
+        <View style={styles.line} />
+        <Text style={styles.orText}>or</Text>
+        <View style={styles.line} />
+      </View>
+
+     <FastAuth />
     </View>
   )
 }
@@ -98,6 +104,22 @@ const styles = StyleSheet.create({
   forgotPassword: {
     textAlign: 'center',
     color: colors.textLight,
+  },
+  fastLoginLine: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#ccc',
+  },
+  orText: {
+    marginHorizontal: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#aaa',
   },
 })
 

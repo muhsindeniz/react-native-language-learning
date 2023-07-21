@@ -11,7 +11,6 @@ import React from 'react'
 const Stack = createNativeStackNavigator()
 
 const App: React.FC = () => {
-
   return (
     <NavigationContainer>
       <Stack.Navigator>

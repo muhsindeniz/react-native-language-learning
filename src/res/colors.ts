@@ -9,6 +9,7 @@ const colors = {
   textLight: '#A1A8BB',
   textWhite: '#FFF',
   textPrimary: '#6a4ae3',
+  textBlue: "#1A94FE",
   // STORY
   storyGradient: ['#feda75', '#d62976'],
   // BUTTON
