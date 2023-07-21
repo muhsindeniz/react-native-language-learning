@@ -1,5 +1,6 @@
+import { OutlineButton, PrimaryButton } from '../../components/Button';
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import colors from 'res/colors';
 import images from 'res/images';
 
@@ -16,16 +17,12 @@ const AuthScreen: React.FC = ({navigation}: any) => {
           Are you ready to learn languages easily in the funniest way ?
         </Text>
 
-        <TouchableOpacity
-          style={[styles.primaryButton, styles.button]}
-          onPress={() => navigation.navigate('LoginScreen')}>
-          <Text style={styles.primaryText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.primaryOutlineButton, styles.button]}
-          onPress={() => navigation.navigate('RegisterScreen')}>
-          <Text style={styles.outlineText}>Sign Up</Text>
-        </TouchableOpacity>
+        <PrimaryButton onPress={() => navigation.navigate('LoginScreen')}>
+          Login
+        </PrimaryButton>
+        <OutlineButton onPress={() => navigation.navigate('RegisterScreen')}>
+          Sign Up
+        </OutlineButton>
       </View>
     </View>
   );
@@ -42,7 +39,6 @@ const styles = StyleSheet.create({
     maxHeight: 300,
   },
   content: {
-    flex: 1,
     paddingHorizontal: 30,
     justifyContent: 'center',
   },
@@ -60,34 +56,6 @@ const styles = StyleSheet.create({
   description: {
     color: colors.textLight,
     marginVertical: 20,
-  },
-  button: {
-    borderRadius: 16,
-    paddingVertical: 20,
-    marginVertical: 10,
-    paddingHorizontal: 20,
-  },
-  primaryButton: {
-    backgroundColor: colors.primaryButton,
-  },
-  primaryOutlineButton: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: '#6a4ae3',
-  },
-  primaryText: {
-    textAlign: 'center',
-    fontFamily: 'Helvetica',
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: colors.textWhite,
-  },
-  outlineText: {
-    textAlign: 'center',
-    fontFamily: 'Helvetica',
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: colors.textPrimary,
   },
 });
 

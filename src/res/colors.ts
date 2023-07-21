@@ -15,6 +15,11 @@ const colors = {
   primaryButton: '#6a4ae3',
   primaryOutlineButton: 'transparant',
   whiteButton: '#FFFFFF',
+  disableButton: "#E0E6F3",
+  // INPUT
+  inputBorder: '#E0E6F3',
+  activeInputBorder: "#ccc",
+  labelColor: "#E0E6F3",
   // NAVIGATION HEADER
   authLeftIcon: '#555'
 };

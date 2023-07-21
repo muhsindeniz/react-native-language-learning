@@ -31,11 +31,6 @@ const styles = StyleSheet.create({
     height: 200,
     objectFit: 'contain',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 16,
-  },
 });
 
 export default SplashScreen;
