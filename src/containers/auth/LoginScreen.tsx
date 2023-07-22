@@ -1,10 +1,8 @@
-import {OutlineButton, PrimaryButton} from '../../components/Button'
+import {PrimaryButton} from '../../components/Button'
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, TextInput, Image} from 'react-native'
 import {IconButton} from 'react-native-paper'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import colors from 'res/colors'
-import images from 'res/images'
 import FastAuth from './components/FastAuth/FastAuth'
 
 const LoginScreen: React.FC = ({navigation}: any) => {
@@ -68,7 +66,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.authBackground,
-    paddingVertical: 40,
+    paddingVertical: 20,
     paddingHorizontal: 30,
   },
   title: {
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   loginForm: {
-    paddingVertical: 30,
+    paddingVertical: 20,
     gap: 20,
   },
   loginInput: {
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
   fastLoginLine: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 20,
+    marginVertical: 10,
   },
   line: {
     flex: 1,
